@@ -10,7 +10,8 @@ public:
         int collor=matrix[0].size();//列数
         //计算打印的圈数
         int circle=((row<collor?row:collor)-1)/2+1;//圈数
-        for(int i=0;i<circle;i++){
+        for(int i=0;i<circle;i++)
+        {
             //从左向右打印
             for(int j=i;j<collor-i;j++)
                 res.push_back(matrix[i][j]);         
@@ -22,7 +23,9 @@ public:
                 res.push_back(matrix[row-i-1][m]);
             //判断是否会重复打印(从下往上的每一列数据)
             for(int n=row-i-2;(n>i)&&(collor-i-1!=i);n--)
-                res.push_back(matrix[n][i]);}
+                res.push_back(matrix[n][i]);
+            
+        }
         return res;
     }
 };
